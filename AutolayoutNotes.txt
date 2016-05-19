@@ -1,0 +1,23 @@
+
+IN GENERAL
+- Minimize number of constraints (for clarity & maintainability)
+- Generally constrain elements relative to what's around it
+	- i.e. If a label sits above a text field, make the text field's top constraint relative to the lable, not the top of the superview
+- Do not assume a specific screen width or height
+- Constraints can have an outlet
+- Identifiers can be assigned to constraints in Interface Builder; this helps w/debugging
+
+
+LABELS
+- No need for height constraint
+- Clear "Explicit" checkbox for prefered width
+- If it will never wrap, no need for width or trailing constraint
+- If # of lines may vary, set # of lines to 0
+- Hiding a label does not set its dimensions to 0. To do that, set its text to an empty string
+
+IMAGES
+- If not fixed dimensions
+	- Set width (or height) relative to something else
+	- Set aspect ratio constraint
+		- If aspect never changes, set in storyboard
+		- If aspect may change, set in code based on image's actual dimensions
